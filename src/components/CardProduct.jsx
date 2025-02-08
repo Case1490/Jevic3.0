@@ -10,7 +10,9 @@ const CardProduct = ({ id, image, name, description, price }) => {
           <img src={image} alt={name} className="h-full object-contain" />
         </div>
         <h1 className="text-xl text-BlueMain">{name}</h1>
-        <p className="text-sm my-2">{description}</p>
+        <p className="text-sm my-2 line-clamp-2 overflow-hidden">
+          {description}
+        </p>
         <p className="font-bold text-2xl">S/ {price}</p>
       </Link>
 

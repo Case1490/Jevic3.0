@@ -76,7 +76,7 @@ const AllProducts = () => {
           <button
             key={category}
             className={`navbarLinkProduct ${
-              selectedCategory === normalizeText(category)
+              normalizeText(selectedCategory) === normalizeText(category)
                 ? "activeProduct"
                 : ""
             }`}
@@ -102,7 +102,7 @@ const AllProducts = () => {
                 name={product.nombre}
                 price={product.precio}
                 image={product.imagen}
-                description={product.descripcion || "asjdsajdjasjds"}
+                description={product.descripcion || "No hay descripción."}
               />
             ))}
           </div>

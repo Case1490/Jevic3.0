@@ -845,3 +845,19 @@ hr {
     transform: scale(1, 1);
   }
 }
+
+/* Evita que este Swiper afecte otros Swiper en la web */
+.swiper-other-products {
+  padding-bottom: 20px;
+}
+
+.swiper-other-products .swiper-button-next,
+.swiper-other-products .swiper-button-prev {
+  color: #333;
+  /* Personaliza el color de las flechas */
+}
+
+.swiper-other-products .swiper-pagination-bullet-active {
+  background-color: #333;
+  /* Personaliza el color de la paginación activa */
+}

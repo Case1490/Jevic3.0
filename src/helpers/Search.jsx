@@ -1,17 +1,31 @@
 import { useState } from "react";
+import SearchSuggestions from "./SearchSuggestions";
 
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [isFocused, setIsFocused] = useState(false);
 
   const handleSearch = (e) => {
     setSearchTerm(e.target.value);
   };
 
+  const handleSelect = (product) => {
+    console.log("Producto seleccionado:", product);
+    setSearchTerm("");
+    setIsFocused(false);
+  };
+
   return (
-    <div className="flex items-center justify-center w-[400px]">
-      <div className="w-full">
-        <div className="flex rounded-lg border-2 border-BlueMain w-full">
-          {/* Icono de búsqueda */}
+    <div className="relative w-[400px]">
+      {isFocused && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 z-40"
+          onClick={() => setIsFocused(false)}
+        ></div>
+      )}
+
+      <div className="relative z-50">
+        <div className="flex rounded-lg border-2 border-BlueMain w-full text-black">
           <div className="flex w-10 items-center justify-center rounded-tl-lg rounded-bl-lg border-r border-gray-200 bg-white p-5">
             <svg
               viewBox="0 0 20 20"
@@ -22,24 +36,25 @@ const Search = () => {
             </svg>
           </div>
 
-          {/* Input de búsqueda */}
           <input
             type="text"
-            className=" flex-grow bg-white pl-2 text-base outline-0 text-black"
+            className="flex-grow bg-white pl-2 text-base outline-0 text-black"
             placeholder="Buscar..."
-            aria-label="Search input"
             value={searchTerm}
             onChange={handleSearch}
+            onFocus={() => setIsFocused(true)}
           />
 
-          {/* Botón de búsqueda */}
-          <button
-            onClick={handleSearch}
-            className="bg-BlueMain p-2 rounded-tr-md rounded-br-md text-white font-semibold hover:bg-blue-800 transition-colors"
-          >
+          <button className="bg-BlueMain p-2 rounded-tr-md rounded-br-md text-white font-semibold hover:bg-blue-800 transition-colors">
             Buscar
           </button>
         </div>
+
+        <SearchSuggestions
+          searchTerm={searchTerm}
+          onSelect={handleSelect}
+          isFocused={isFocused}
+        />
       </div>
     </div>
   );

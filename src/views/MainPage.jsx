@@ -5,6 +5,7 @@ import CarouselProducts from "../components/CarouselProducts";
 import CategoriesCards from "../components/CategoriesCards";
 import DetailsShop from "../components/DetailsShop";
 import NewProducts from "../components/NewProducts";
+import SliderBrands from "../components/SliderBrands";
 import SuscribeNews from "../components/SuscribeNews";
 import Testimonials from "../components/Testimonials";
 
@@ -18,6 +19,7 @@ const MainPage = () => {
       <AnyProducts />
       <BannerPrice />
       <NewProducts />
+      <SliderBrands />
       <Testimonials />
       <SuscribeNews />
     </>

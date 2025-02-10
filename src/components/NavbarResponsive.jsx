@@ -1,4 +1,5 @@
 import { useState } from "react";
+import SearchResponsive from "./SearchResponsive";
 import Logo from "../assets/Logo_dark-removebg-preview.png";
 import HamburguerIcon from "../icons/HamburguerIcon";
 import { Link } from "react-router-dom";
@@ -29,7 +30,7 @@ const NavbarResponsive = () => {
   };
 
   return (
-    <div className="block lg:hidden bg-DarkMain text-white fixed w-full z-[999] rounded-b-[50px]">
+    <div className="block lg:hidden bg-DarkMain text-white fixed w-full z-[99] rounded-b-[50px]">
       {/* Barra superior */}
       <div className="w-5/6 m-auto flex items-center justify-between py-3">
         <div className="w-[50px]">
@@ -41,19 +42,9 @@ const NavbarResponsive = () => {
       </div>
 
       {searchShow && (
-        <div className="absolute top-4 w-[90%] left-4 z-20">
-          <input
-            type="search"
-            className="w-full p-2 rounded-2xl text-slate-700"
-            placeholder="Buscar..."
-          />
-        </div>
-      )}
-
-      {searchShow && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-50"
-          onClick={handleSearchResponsive}
+        <SearchResponsive
+          searchShow={searchShow}
+          onClose={handleSearchResponsive}
         />
       )}
 
@@ -75,12 +66,12 @@ const NavbarResponsive = () => {
 
         {/* Menú lateral */}
         <div
-          className={`fixed top-0 left-0 w-2/3 sm:w-1/2 h-screen bg-white text-black z-20 transition-transform ${
+          className={`fixed overflow-y-auto top-0 left-0 w-2/3 sm:w-1/2 h-screen bg-white text-black z-20 transition-transform ${
             menuActive ? "translate-x-0" : "-translate-x-full"
           }`}
         >
           <nav className="h-full flex items-start justify-end pt-10 pr-10">
-            <ul className="flex flex-col gap-y-20">
+            <ul className="flex flex-col gap-y-10">
               <Link className="border-b border-BlueMain flex items-center gap-x-2 pb-1">
                 <HomeIcon /> Inicio
               </Link>
@@ -104,18 +95,30 @@ const NavbarResponsive = () => {
                   {submenuOpen ? <ArrowUp /> : <ArrowDown />}
                 </div>
                 <ul
-                  className={` mt-2 transition-all overflow-hidden text-slate-600 ${
-                    submenuOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
+                  className={`transition-all space-y-4 mt-4  overflow-hidden text-slate-600 ${
+                    submenuOpen ? " max-h-80 opacity-100" : "max-h-0 opacity-0"
                   }`}
                 >
                   <li className="py-1">
-                    <Link to="/categoria1">Categoría 1</Link>
+                    <Link to="/categoria1">Celulares</Link>
                   </li>
                   <li className="py-1">
-                    <Link to="/categoria2">Categoría 2</Link>
+                    <Link to="/categoria2">SmartWatch</Link>
                   </li>
                   <li className="py-1">
-                    <Link to="/categoria3">Categoría 3</Link>
+                    <Link to="/categoria3">Periféricos</Link>
+                  </li>
+                  <li className="py-1">
+                    <Link to="/categoria3">Cargadores</Link>
+                  </li>
+                  <li className="py-1">
+                    <Link to="/categoria3">Audífonos</Link>
+                  </li>
+                  <li className="py-1">
+                    <Link to="/categoria3">Cámaras IP</Link>
+                  </li>
+                  <li className="py-1">
+                    <Link to="/categoria3">Drones</Link>
                   </li>
                 </ul>
               </div>

@@ -1,12 +1,33 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
+import { getDocs, collection } from "firebase/firestore";
+import { db } from "../firebaseConfig";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import CardProduct from "./CardProduct";
 
 const AnyProducts = () => {
+  const [randomProducts, setRandomProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const querySnapshot = await getDocs(collection(db, "productos"));
+      const allProducts = querySnapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+
+      // Obtener 4 productos aleatorios
+      const shuffled = allProducts.sort(() => 0.5 - Math.random());
+      setRandomProducts(shuffled.slice(0, 4));
+    };
+
+    fetchProducts();
+  }, []);
+
   return (
     <div className="w-5/6 m-auto">
       <h1 className="text-2xl md:text-4xl">Explora Nuestros Productos</h1>
@@ -25,18 +46,17 @@ const AnyProducts = () => {
         }}
         className="my-8"
       >
-        <SwiperSlide>
-          <CardProduct />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CardProduct />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CardProduct />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CardProduct />
-        </SwiperSlide>
+        {randomProducts.map((product) => (
+          <SwiperSlide key={product.id}>
+            <CardProduct
+              id={product.id}
+              image={product.imagen}
+              name={product.nombre}
+              description={product.descripcion}
+              price={product.precio}
+            />
+          </SwiperSlide>
+        ))}
       </Swiper>
 
       <div className="flex justify-end mt-1 md:mt-4">

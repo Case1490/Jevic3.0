@@ -870,6 +870,15 @@ hr {
   overflow: hidden;
 }
 
+@media (max-width: 800px) {
+  .slider {
+      width: 100vw;
+      height: auto;
+      margin: auto;
+      overflow: hidden;
+  }
+}
+
 .slider .slide-track{
   display: flex;
   align-items: center;

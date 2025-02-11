@@ -1,12 +1,46 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
+import { getDocs, collection, query, orderBy, limit } from "firebase/firestore";
+import { db } from "../firebaseConfig";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import CardProduct from "./CardProduct";
 
 const NewProducts = () => {
+  const [latestProducts, setLatestProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchLatestProducts = async () => {
+      try {
+        const q = query(
+          collection(db, "productos"),
+          orderBy("createdAt", "desc"), // 🔥 Ordena por fecha de creación
+          limit(4)
+        );
+        const querySnapshot = await getDocs(q);
+        const products = querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+
+        console.log("Últimos productos:", products); // 🔍 Verifica los datos en consola
+        setLatestProducts(products);
+      } catch (error) {
+        console.error("Error obteniendo productos:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchLatestProducts();
+  }, []);
+
+  if (loading) return <p className="text-center">Cargando productos...</p>;
+
   return (
     <div className="w-5/6 m-auto">
       <h1 className="text-2xl md:text-4xl">Últimas novedades</h1>
@@ -25,18 +59,17 @@ const NewProducts = () => {
         }}
         className="my-8"
       >
-        <SwiperSlide>
-          <CardProduct />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CardProduct />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CardProduct />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CardProduct />
-        </SwiperSlide>
+        {latestProducts.map((product) => (
+          <SwiperSlide key={product.id}>
+            <CardProduct
+              id={product.id}
+              image={product.imagen}
+              name={product.nombre}
+              description={product.descripcion}
+              price={product.precio}
+            />
+          </SwiperSlide>
+        ))}
       </Swiper>
 
       <div className="flex justify-end mt-1 md:mt-4">

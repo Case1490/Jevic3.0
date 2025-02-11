@@ -13,6 +13,9 @@ import Xiaomi from "../assets/marcas/xiaomi.png";
 const SliderBrands = () => {
   return (
     <div className="mt-20">
+      <h1 className="text-center text-4xl font-bold mb-10">
+        Las Mejores Marcas, en un Solo Lugar
+      </h1>
       <div className="slider">
         <div className="slide-track">
           <div className="slide">

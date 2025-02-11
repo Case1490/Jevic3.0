@@ -71,7 +71,7 @@ const Footer = () => {
 
       <hr />
 
-      <div className="w-5/6 m-auto flex flex-col space-y-4 lg:space-y-0 items-center lg:justify-between py-4 text-gray-400">
+      <div className="w-5/6 m-auto flex flex-col lg:flex-row space-y-4 lg:space-y-0 items-center lg:justify-between py-4 text-gray-400">
         <h1 className="text-center md:text-left">
           &copy; {year} JevicTecnology. Todos los derechos reservados.
         </h1>

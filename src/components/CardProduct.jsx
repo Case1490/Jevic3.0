@@ -18,7 +18,12 @@ const CardProduct = ({ id, image, name, description, price }) => {
 
       {/* Botón de compra con preventDefault para evitar conflictos */}
       <a
-        href="#"
+        href={`https://wa.me/${
+          import.meta.env.VITE_NUMBERWHATSAPP
+        }?text=${encodeURIComponent(
+          `Hola, estoy interesado en el producto: ${name}. ¿Podrían darme más información?`
+        )}`}
+        target="_blank"
         onClick={(e) => e.stopPropagation()} // Evita que el Link se active al hacer clic aquí
         className="bg-green-500 text-white flex items-center justify-center gap-x-2 py-2 rounded-lg mt-2 uppercase hover:bg-green-600"
       >

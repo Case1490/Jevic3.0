@@ -82,7 +82,13 @@ const CarouselProducts = () => {
 
             <div className="flex gap-x-2 justify-center">
               <a
-                href="#"
+                href={`https://wa.me/${
+                  import.meta.env.VITE_NUMBERWHATSAPP
+                }?text=${encodeURIComponent(
+                  `Hola, estoy interesado en el producto: ${currentProduct.nombre}. ¿Podrían darme más información?`
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-4 py-2 bg-BlueMain text-white hover:bg-blue-900"
               >
                 Comprar

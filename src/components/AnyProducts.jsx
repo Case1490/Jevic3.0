@@ -61,7 +61,7 @@ const AnyProducts = () => {
 
       <div className="flex justify-end mt-1 md:mt-4">
         <Link
-          to="/Todo"
+          to="/productos"
           className="bg-BlueMain text-white p-3 rounded-full hover:bg-BlueLight"
         >
           Ver Todo

@@ -55,17 +55,17 @@ const Footer = () => {
       <div className="w-5/6 m-auto py-4 flex lg:flex-row space-y-4 lg:space-y-0 items-center lg:justify-between flex-col text-white">
         <div className="flex items-center gap-x-1">
           <LocationIcon />
-          <h1>Calle Tecnología 123, Ciudad Digital</h1>
+          <h1>Chincha Alta, Perú</h1>
         </div>
 
         <div className="flex items-center gap-x-1">
           <PhoneIcon />
-          <h1>+34 900 123 456</h1>
+          <h1>+51 959 483 871</h1>
         </div>
 
         <div className="flex items-center gap-x-1">
           <EmailIcon />
-          <h1>info@techstore.com</h1>
+          <h1>jevictecnology@gmail.com</h1>
         </div>
       </div>
 

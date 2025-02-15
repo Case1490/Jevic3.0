@@ -20,7 +20,15 @@ const BannerPrice = () => {
             siempre a un precio justo
           </p>
 
-          <a className="btn btn-1 hover-filled-slide-left">
+          <a
+            href={`https://wa.me/${
+              import.meta.env.VITE_NUMBERWHATSAPP
+            }?text=${encodeURIComponent(
+              `Hola, quisiera más información acerca de...`
+            )}`}
+            target="_blank"
+            className="btn btn-1 hover-filled-slide-left"
+          >
             <span>Contáctenos</span>
           </a>
         </div>

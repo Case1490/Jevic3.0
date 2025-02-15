@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Logo from "../assets/Logo_dark-removebg-preview.png";
 import Search from "../helpers/Search";
 import HamburguerIcon from "../icons/HamburguerIcon";
@@ -29,9 +29,9 @@ const Navbar = () => {
     <>
       <div className="hidden lg:block bg-DarkMain text-white fixed w-full z-[90] rounded-b-[50px]">
         <div className="w-5/6 m-auto flex items-center justify-between py-3">
-          <div className="w-[60px]">
+          <Link to="/" className="w-[60px]">
             <img src={Logo} alt="JevicTecnology" className="w-full" />
-          </div>
+          </Link>
 
           <div>
             <Search />

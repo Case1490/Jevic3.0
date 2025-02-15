@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import AnyProducts from "../components/AnyProducts";
 import BannerPrice from "../components/BannerPrice";
 import Benefits from "../components/Benefits";
@@ -6,10 +7,14 @@ import CategoriesCards from "../components/CategoriesCards";
 import DetailsShop from "../components/DetailsShop";
 import NewProducts from "../components/NewProducts";
 import SliderBrands from "../components/SliderBrands";
-import SuscribeNews from "../components/SuscribeNews";
 import Testimonials from "../components/Testimonials";
 
 const MainPage = () => {
+  // Código para que nos lleve al inicio de la página
+  useEffect(() => {
+    window.scrollTo(0, 0); // Desplazarse hacia el inicio
+  }, []);
+
   return (
     <>
       <CarouselProducts />
@@ -21,7 +26,6 @@ const MainPage = () => {
       <NewProducts />
       <SliderBrands />
       <Testimonials />
-      <SuscribeNews />
     </>
   );
 };

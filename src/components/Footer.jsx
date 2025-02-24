@@ -89,11 +89,17 @@ const Footer = () => {
           &copy; {year} JevicTecnology. Todos los derechos reservados.
         </h1>
         <div className="flex justify-center items-center gap-x-10 sm:gap-x-2">
-          <Link className="hover:text-white inline-block">
+          <Link
+            to="/politica-de-privacidad"
+            className="hover:text-white inline-block"
+          >
             Política de Privacidad
           </Link>
           <span>|</span>
-          <Link className="hover:text-white inline-block">
+          <Link
+            to="/terminos-y-condiciones"
+            className="hover:text-white inline-block"
+          >
             Términos y Condiciones
           </Link>
         </div>

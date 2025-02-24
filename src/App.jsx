@@ -7,6 +7,8 @@ import Contact from "./views/Contact";
 import AllProducts from "./views/AllProducts";
 import NavbarResponsive from "./components/NavbarResponsive";
 import ProductDetails from "./views/ProductDetails";
+import TermsAndConditions from "./views/TermsAndConditions";
+import SafeData from "./views/SafeData";
 
 function App() {
   return (
@@ -20,6 +22,11 @@ function App() {
           <Route path="/producto/:id" element={<ProductDetails />} />
           <Route path="/nosotros" element={<AboutUs />} />
           <Route path="/contacto" element={<Contact />} />
+          <Route path="/politica-de-privacidad" element={<SafeData />} />
+          <Route
+            path="/terminos-y-condiciones"
+            element={<TermsAndConditions />}
+          />
         </Routes>
         <Footer />
       </Router>

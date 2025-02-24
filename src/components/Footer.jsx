@@ -27,13 +27,27 @@ const Footer = () => {
           <h1 className="text-3xl font-bold text-center">Categorías</h1>
 
           <div className="flex flex-col mt-4 items-center space-y-4">
-            <Link className="hover:text-CoralMain">Celulares</Link>
-            <Link className="hover:text-CoralMain">SmartWatch</Link>
-            <Link className="hover:text-CoralMain">Periféricos</Link>
-            <Link className="hover:text-CoralMain">Cargadores</Link>
-            <Link className="hover:text-CoralMain">Audífonos</Link>
-            <Link className="hover:text-CoralMain">Cámaras IP</Link>
-            <Link className="hover:text-CoralMain">Drones</Link>
+            <Link to="/productos/celulares" className="hover:text-CoralMain">
+              Celulares
+            </Link>
+            <Link to="/productos/smartwatch" className="hover:text-CoralMain">
+              SmartWatch
+            </Link>
+            <Link to="/productos/perifericos" className="hover:text-CoralMain">
+              Periféricos
+            </Link>
+            <Link to="/productos/cargadores" className="hover:text-CoralMain">
+              Cargadores
+            </Link>
+            <Link to="/productos/audifonos" className="hover:text-CoralMain">
+              Audífonos
+            </Link>
+            <Link to="/productos/camarasip" className="hover:text-CoralMain">
+              Cámaras IP
+            </Link>
+            <Link to="/productos/drones" className="hover:text-CoralMain">
+              Drones
+            </Link>
           </div>
         </div>
         {/* tercera columna */}
@@ -46,7 +60,6 @@ const Footer = () => {
             nuestras principales redes sociales para estar al día con
             promociones, productos y mucho más
           </p>
-
           <SocialMedia />
         </div>
       </div>

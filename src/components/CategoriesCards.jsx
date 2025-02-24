@@ -1,5 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
+import { useNavigate } from "react-router-dom"; // Importa useNavigate
 import "swiper/css";
 import "swiper/css/navigation";
 
@@ -13,6 +14,18 @@ import CamarasIP from "../assets/categorias/camarasip.jpg";
 import Drones from "../assets/categorias/drones.png";
 
 const CategoriesCards = () => {
+  const navigate = useNavigate(); // Hook para redirigir
+
+  const categories = [
+    { name: "Celulares", image: Celular },
+    { name: "SmartWatch", image: SmartWatch },
+    { name: "Periféricos", image: Perifericos },
+    { name: "Cargadores", image: Cargadores },
+    { name: "Audífonos", image: Audifonos },
+    { name: "CámarasIP", image: CamarasIP },
+    { name: "Drones", image: Drones },
+  ];
+
   return (
     <div className="w-[90%] m-auto my-4">
       <h1 className="text-center text-2xl sm:text-4xl mb-2">
@@ -21,9 +34,9 @@ const CategoriesCards = () => {
       <hr />
       <Swiper
         modules={[Navigation]}
-        spaceBetween={20} // Espaciado entre slides
-        slidesPerView={1} // Cantidad de tarjetas visibles en escritorio
-        navigation // Activa las flechas de navegación
+        spaceBetween={20}
+        slidesPerView={1}
+        navigation
         breakpoints={{
           320: {
             slidesPerView: 1,
@@ -37,27 +50,16 @@ const CategoriesCards = () => {
         }}
         className="my-6"
       >
-        <SwiperSlide>
-          <CategorieCard imagen={Celular} nombre="Celulares" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CategorieCard imagen={SmartWatch} nombre="SmartWatch" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CategorieCard imagen={Perifericos} nombre="Periféricos" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CategorieCard imagen={Cargadores} nombre="Cargadores" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CategorieCard imagen={Audifonos} nombre="Audífonos" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CategorieCard imagen={CamarasIP} nombre="Cámaras IP" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CategorieCard imagen={Drones} nombre="Drones" />
-        </SwiperSlide>
+        {categories.map((category) => (
+          <SwiperSlide key={category.name}>
+            <div
+              onClick={() => navigate(`/productos/${category.name}`)}
+              className="cursor-pointer"
+            >
+              <CategorieCard imagen={category.image} nombre={category.name} />
+            </div>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );

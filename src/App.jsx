@@ -16,7 +16,7 @@ function App() {
         <NavbarResponsive />
         <Routes>
           <Route path="/" element={<MainPage />} />
-          <Route path="/productos" element={<AllProducts />} />
+          <Route path="/productos/:categoria?" element={<AllProducts />} />
           <Route path="/producto/:id" element={<ProductDetails />} />
           <Route path="/nosotros" element={<AboutUs />} />
           <Route path="/contacto" element={<Contact />} />

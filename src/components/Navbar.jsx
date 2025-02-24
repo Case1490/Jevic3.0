@@ -114,27 +114,55 @@ const Navbar = () => {
         </button>
         <h2 className="text-2xl font-bold text-center mb-10">Categorías</h2>
         <ul className="text-lg  space-y-8 text-center">
-          <li className="hover:text-BlueMain cursor-pointer flex items-center justify-center gap-x-2">
+          <Link
+            to="/productos/celulares"
+            className="hover:text-BlueMain cursor-pointer flex items-center justify-center gap-x-2"
+            onClick={handleCloseCategories}
+          >
             <Smartphone size={20} /> Celulares
-          </li>
-          <li className="hover:text-BlueMain cursor-pointer flex items-center justify-center gap-x-2">
+          </Link>
+          <Link
+            to="/productos/smartwatch"
+            className="hover:text-BlueMain cursor-pointer flex items-center justify-center gap-x-2"
+            onClick={handleCloseCategories}
+          >
             <Watch size={20} /> SmartWatch
-          </li>
-          <li className="hover:text-BlueMain cursor-pointer flex items-center justify-center gap-x-2">
+          </Link>
+          <Link
+            to="/productos/perifericos"
+            className="hover:text-BlueMain cursor-pointer flex items-center justify-center gap-x-2"
+            onClick={handleCloseCategories}
+          >
             <Laptop size={20} /> Periféricos
-          </li>
-          <li className="hover:text-BlueMain cursor-pointer flex items-center justify-center gap-x-2">
+          </Link>
+          <Link
+            to="/productos/cargadores"
+            className="hover:text-BlueMain cursor-pointer flex items-center justify-center gap-x-2"
+            onClick={handleCloseCategories}
+          >
             <PlugZap size={20} /> Cargadores
-          </li>
-          <li className="hover:text-BlueMain cursor-pointer flex items-center justify-center gap-x-2">
+          </Link>
+          <Link
+            to="/productos/audifonos"
+            className="hover:text-BlueMain cursor-pointer flex items-center justify-center gap-x-2"
+            onClick={handleCloseCategories}
+          >
             <Headset size={20} /> Audífonos
-          </li>
-          <li className="hover:text-BlueMain cursor-pointer flex items-center justify-center gap-x-2">
+          </Link>
+          <Link
+            to="/productos/camarasip"
+            className="hover:text-BlueMain cursor-pointer flex items-center justify-center gap-x-2"
+            onClick={handleCloseCategories}
+          >
             <Cctv size={20} /> Cámaras IP
-          </li>
-          <li className="hover:text-BlueMain cursor-pointer flex items-center justify-center gap-x-2">
+          </Link>
+          <Link
+            to="/productos/drones"
+            className="hover:text-BlueMain cursor-pointer flex items-center justify-center gap-x-2"
+            onClick={handleCloseCategories}
+          >
             <Rocket size={20} /> Drones
-          </li>
+          </Link>
         </ul>
       </div>
     </>

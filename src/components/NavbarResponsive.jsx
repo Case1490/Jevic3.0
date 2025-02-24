@@ -72,16 +72,32 @@ const NavbarResponsive = () => {
         >
           <nav className="h-full flex items-start justify-end pt-10 pr-10">
             <ul className="flex flex-col gap-y-10">
-              <Link className="border-b border-BlueMain flex items-center gap-x-2 pb-1">
+              <Link
+                to="/"
+                className="border-b border-BlueMain flex items-center gap-x-2 pb-1"
+                onClick={() => setMenuActive(false)}
+              >
                 <HomeIcon /> Inicio
               </Link>
-              <Link className="border-b border-BlueMain flex items-center gap-x-2 pb-1">
+              <Link
+                to="/productos"
+                className="border-b border-BlueMain flex items-center gap-x-2 pb-1"
+                onClick={() => setMenuActive(false)}
+              >
                 <ProductsIcon /> Productos
               </Link>
-              <Link className="border-b border-BlueMain flex items-center gap-x-2 pb-1">
+              <Link
+                to="/nosotros"
+                className="border-b border-BlueMain flex items-center gap-x-2 pb-1"
+                onClick={() => setMenuActive(false)}
+              >
                 <AboutUsIcon /> Nosotros
               </Link>
-              <Link className="border-b border-BlueMain flex items-center gap-x-2 pb-1">
+              <Link
+                to="/contacto"
+                className="border-b border-BlueMain flex items-center gap-x-2 pb-1"
+                onClick={() => setMenuActive(false)}
+              >
                 <ContactIcon /> Contacto
               </Link>
 
@@ -95,30 +111,65 @@ const NavbarResponsive = () => {
                   {submenuOpen ? <ArrowUp /> : <ArrowDown />}
                 </div>
                 <ul
-                  className={`transition-all space-y-4 mt-4  overflow-hidden text-slate-600 ${
+                  className={`transition-all mb-3 space-y-4 mt-4  overflow-hidden text-slate-600 ${
                     submenuOpen ? " max-h-80 opacity-100" : "max-h-0 opacity-0"
                   }`}
                 >
                   <li className="py-1">
-                    <Link to="/categoria1">Celulares</Link>
+                    <Link
+                      to="/productos/celulares"
+                      onClick={() => setMenuActive(false)}
+                    >
+                      Celulares
+                    </Link>
                   </li>
                   <li className="py-1">
-                    <Link to="/categoria2">SmartWatch</Link>
+                    <Link
+                      to="/productos/smartwatch"
+                      onClick={() => setMenuActive(false)}
+                    >
+                      SmartWatch
+                    </Link>
                   </li>
                   <li className="py-1">
-                    <Link to="/categoria3">Periféricos</Link>
+                    <Link
+                      to="/productos/perifericos"
+                      onClick={() => setMenuActive(false)}
+                    >
+                      Periféricos
+                    </Link>
                   </li>
                   <li className="py-1">
-                    <Link to="/categoria3">Cargadores</Link>
+                    <Link
+                      to="/productos/cargadores"
+                      onClick={() => setMenuActive(false)}
+                    >
+                      Cargadores
+                    </Link>
                   </li>
                   <li className="py-1">
-                    <Link to="/categoria3">Audífonos</Link>
+                    <Link
+                      to="/productos/audifonos"
+                      onClick={() => setMenuActive(false)}
+                    >
+                      Audífonos
+                    </Link>
                   </li>
                   <li className="py-1">
-                    <Link to="/categoria3">Cámaras IP</Link>
+                    <Link
+                      to="/productos/camarasip"
+                      onClick={() => setMenuActive(false)}
+                    >
+                      Cámaras IP
+                    </Link>
                   </li>
                   <li className="py-1">
-                    <Link to="/categoria3">Drones</Link>
+                    <Link
+                      to="/productos/drones"
+                      onClick={() => setMenuActive(false)}
+                    >
+                      Drones
+                    </Link>
                   </li>
                 </ul>
               </div>

@@ -3,6 +3,7 @@ import { collection, query, orderBy, limit, getDocs } from "firebase/firestore";
 import { db } from "../firebaseConfig";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
+import Loading from "../helpers/Loading";
 
 const CarouselProducts = () => {
   const [products, setProducts] = useState([]);
@@ -57,7 +58,11 @@ const CarouselProducts = () => {
   };
 
   if (products.length === 0) {
-    return <p className="text-center mt-10">Cargando productos...</p>;
+    return (
+      <div className="pt-[140px] min-h-screen flex items-center justify-center">
+        <Loading />
+      </div>
+    );
   }
 
   const currentProduct = products[currentIndex];

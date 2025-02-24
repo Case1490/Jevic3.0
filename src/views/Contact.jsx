@@ -10,7 +10,6 @@ const Contact = () => {
     handleSubmit,
     formState: { errors, isSubmitting, isSubmitSuccessful },
     reset,
-    setValue,
   } = useForm();
 
   useEffect(() => {

@@ -906,3 +906,11 @@ hr {
     transform: translateX(calc(-200px * 5));
   }
 }
+
+/* CONTACT IMAGE */
+.imgShadow{
+  mask-image: linear-gradient(
+    black 80%,
+    transparent
+  );
+}

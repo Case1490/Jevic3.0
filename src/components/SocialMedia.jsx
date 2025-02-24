@@ -1,7 +1,23 @@
 const SocialMedia = () => {
+  const handleClickFacebook = () => {
+    window.open(
+      "https://www.facebook.com/profile.php?id=100063868521914",
+      "_blank"
+    );
+  };
+
+  const handleClickWhatsapp = () => {
+    const mensaje = encodeURIComponent("Hola, soy...");
+    window.open(`https://wa.me/959483871?text=${mensaje}`, "_blank");
+  };
+
+  const handleClickInstagram = () => {
+    window.open("https://www.instagram.com/tecnologyjevic/", "_blank");
+  };
+
   return (
     <ul className="wrapper">
-      <li className="icon facebook">
+      <li className="icon facebook" onClick={handleClickFacebook}>
         <span className="tooltip">Facebook</span>
         <svg
           viewBox="0 0 320 512"
@@ -12,7 +28,7 @@ const SocialMedia = () => {
           <path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path>
         </svg>
       </li>
-      <li className="icon whatsapp">
+      <li className="icon whatsapp" onClick={handleClickWhatsapp}>
         <span className="tooltip">WhatsApp</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -29,7 +45,7 @@ const SocialMedia = () => {
           <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"></path>
         </svg>
       </li>
-      <li className="icon instagram">
+      <li className="icon instagram" onClick={handleClickInstagram}>
         <span className="tooltip">Instagram</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"

@@ -27,10 +27,9 @@ const NewProducts = () => {
           ...doc.data(),
         }));
 
-        console.log("Últimos productos:", products); // 🔍 Verifica los datos en consola
         setLatestProducts(products);
       } catch (error) {
-        console.error("Error obteniendo productos:", error);
+        console.error(error);
       } finally {
         setLoading(false);
       }
@@ -74,7 +73,7 @@ const NewProducts = () => {
 
       <div className="flex justify-end mt-1 md:mt-4">
         <Link
-          to="/Todo"
+          to="/productos"
           className="bg-BlueMain text-white p-3 rounded-full hover:bg-BlueLight"
         >
           Ver Todo

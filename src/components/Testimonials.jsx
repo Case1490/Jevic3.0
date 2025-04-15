@@ -76,7 +76,7 @@ const Testimonials = () => {
                       <span className="star">&#9733;</span>
                       <span className="star">&#9733;</span>
                       <span className="star">&#9733;</span>
-                      <span className="star">&#9734;</span>
+                      <span className="star">&#9733;</span>
                     </div>
                     <p className="user">{review.name}</p>
                   </div>
